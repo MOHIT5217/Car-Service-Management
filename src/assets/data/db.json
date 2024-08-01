@@ -1,0 +1,27 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com"
+    }
+  ],
+  "cars": [
+    {
+      "clientId": "test",
+      "make": "testdfd",
+      "model": "test",
+      "year": "2332",
+      "status": "Pending",
+      "id": "b7cd"
+    }
+  ],
+  "invoices": [
+    {
+      "id": 1,
+      "carId": 1,
+      "amount": 500,
+      "status": "Unpaid"
+    }
+  ]
+}

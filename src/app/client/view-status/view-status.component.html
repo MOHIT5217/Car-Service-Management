@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row d-flex justify-content-center mt-3 mt-md-5">
+        <div class="col-12">
+            <h1 class="text-center">Cars Status</h1>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Client Id</th>
+                        <th scope="col">Make</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let car of cars; index as i">
+                        <th scope="row">{{i}}</th>
+                        <td>{{car.clientId}}</td>
+                        <td>{{car.make}}</td>
+                        <td>{{car.model}}</td>
+                        <td>{{car.year}}</td>
+                        <td>{{car.status}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <a class="btn btn-primary" [routerLink]="['/client/manage-cars']">Manage</a>
+        </div>
+    </div>
+
+</div>

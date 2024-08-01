@@ -1,0 +1,120 @@
+<div class="container">
+    <div class="row d-flex justify-content-center mt-3 mt-md-5">
+        <div class="col-12">
+            <h1 class="text-center my-5">Manage Cars</h1>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Client Id</th>
+                        <th scope="col">Make</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let car of cars; index as i">
+                        <th scope="row">{{i}}</th>
+                        <td>{{car.clientId}}</td>
+                        <td>{{car.make}}</td>
+                        <td>{{car.model}}</td>
+                        <td>{{car.year}}</td>
+                        <td>{{car.status}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger"  (click)="onDelete(car.id)">Delete</button>
+                            <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal"
+                                data-bs-target="#editModal" (click)="getSingleCarData(car.id)">
+                                Edit
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Update Car Details</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form [formGroup]="regForm" (ngSubmit)="onUpdate()">
+                                                <div class="mb-3">
+                                                    <label for="clientId" class="form-label">Client Id</label>
+                                                    <input class="form-control" type="text" formControlName="clientId"
+                                                        id="clientId">
+                                                    <div class="text-danger"
+                                                        *ngIf="regForm.get('clientId')?.invalid&&regForm.get('clientId')?.touched&&regForm.get('clientId')?.errors">
+                                                        <small
+                                                            *ngIf="regForm.get('clientId')?.errors?.required">clientId
+                                                            is required</small>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="make" class="form-label">Make</label>
+                                                    <input class="form-control" type="text" formControlName="make"
+                                                        id="make">
+                                                    <div class="text-danger"
+                                                        *ngIf="regForm.get('make')?.invalid&&regForm.get('make')?.touched&&regForm.get('make')?.errors">
+                                                        <small *ngIf="regForm.get('make')?.errors?.required">Make is
+                                                            required</small>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="mb-3">
+                                                    <label for="status" class="form-label">Status</label>
+                                                    <input class="form-control" type="text" formControlName="status"
+                                                        id="status">
+                                                    <div class="text-danger"
+                                                        *ngIf="regForm.get('status')?.invalid && regForm.get('status')?.touched">
+                                                        <small *ngIf="regForm.get('status')?.errors?.required">Status is
+                                                            required</small>
+                                                    </div>
+                                                </div> -->
+                                                <div class="mb-3">
+                                                    <label for="model" class="form-label">Model</label>
+                                                    <input class="form-control" type="model" formControlName="model"
+                                                        id="model">
+                                                    <div class="text-danger"
+                                                        *ngIf="regForm.get('model')?.invalid&&regForm.get('model')?.touched&&regForm.get('model')?.errors">
+                                                        <small *ngIf="regForm.get('model')?.errors?.required">model is
+                                                            required</small>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="year" class="form-label">year</label>
+                                                    <input class="form-control" type="text" formControlName="year"
+                                                        id="year">
+                                                    <div class="text-danger"
+                                                        *ngIf="regForm.get('year')?.invalid&&regForm.get('year')?.touched&&regForm.get('year')?.errors">
+                                                        <small *ngIf="regForm.get('year')?.errors?.required">year number
+                                                            is required</small>
+                                                        <small
+                                                            *ngIf="!regForm.get('year')?.errors?.pattern&&regForm.get('year')?.errors?.minlength">Entered
+                                                            number are less than 4</small>
+                                                        <small
+                                                            *ngIf="!regForm.get('year')?.errors?.pattern&&regForm.get('year')?.errors?.maxlength">Entered
+                                                            number are more than 4</small>
+                                                        <small *ngIf="regForm.get('year')?.errors?.pattern">Only number
+                                                            are allowed</small>
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-success" type="submit">Submit</button>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="admin">
+                            <span data-feather="home"></span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/user-list">
+                            <span data-feather="users"></span>
+                            User List
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/car-list">
+                            <span data-feather="car"></span>
+                            Car List
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/update-status">
+                            <span data-feather="edit"></span>
+                            Update Status
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/generate-invoice">
+                            <span data-feather="file-text"></span>
+                            Generate Invoice
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Admin Dashboard</h1>
+            </div>
+
+            <div class="row">
+                <!-- Example Card for User List -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">User List</h5>
+                            <p class="card-text">View and manage all registered users.</p>
+                            <a href="/admin/user-list" class="btn btn-primary">View Users</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Card for Car List -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Car List</h5>
+                            <p class="card-text">View and manage the list of cars.</p>
+                            <a href="/admin/car-list" class="btn btn-primary">View Cars</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Card for Update Status -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Update Service Status</h5>
+                            <p class="card-text">Update the service status of cars.</p>
+                            <a href="/admin/update-status" class="btn btn-primary">Update Status</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Card for Generate Invoice -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Generate Invoice</h5>
+                            <p class="card-text">Generate invoices for completed services.</p>
+                            <a href="/admin/generate-invoice" class="btn btn-primary">Generate Invoice</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

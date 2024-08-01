@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row d-flex justify-content-center mt-3 mt-md-5">
+        <div class="col-12 col-md-6">
+
+            <h1 class="text-center">Apply Service</h1>
+
+            <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="clientId" class="form-label">Client Id</label>
+                    <input class="form-control" type="text" formControlName="clientId" id="clientId">
+                    <div class="text-danger"
+                        *ngIf="regForm.get('clientId')?.invalid&&regForm.get('clientId')?.touched&&regForm.get('clientId')?.errors">
+                        <small *ngIf="regForm.get('clientId')?.errors?.required">clientId is required</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="make" class="form-label">Make</label>
+                    <input class="form-control" type="text" formControlName="make" id="make">
+                    <div class="text-danger"
+                        *ngIf="regForm.get('make')?.invalid&&regForm.get('make')?.touched&&regForm.get('make')?.errors">
+                        <small *ngIf="regForm.get('make')?.errors?.required">Make is required</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="model" class="form-label">Model</label>
+                    <input class="form-control" type="model" formControlName="model" id="model">
+                    <div class="text-danger"
+                        *ngIf="regForm.get('model')?.invalid&&regForm.get('model')?.touched&&regForm.get('model')?.errors">
+                        <small *ngIf="regForm.get('model')?.errors?.required">model is required</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="year" class="form-label">year</label>
+                    <input class="form-control" type="text" formControlName="year" id="year">
+                    <div class="text-danger"
+                        *ngIf="regForm.get('year')?.invalid&&regForm.get('year')?.touched&&regForm.get('year')?.errors">
+                        <small *ngIf="regForm.get('year')?.errors?.required">year number is required</small>
+                        <small
+                            *ngIf="!regForm.get('year')?.errors?.pattern&&regForm.get('year')?.errors?.minlength">Entered
+                            number are less than 4</small>
+                        <small
+                            *ngIf="!regForm.get('year')?.errors?.pattern&&regForm.get('year')?.errors?.maxlength">Entered
+                            number are more than 4</small>
+                        <small *ngIf="regForm.get('year')?.errors?.pattern">Only number are allowed</small>
+                    </div>
+                </div>
+                <button class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

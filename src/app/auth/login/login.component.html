@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h1 class="text-center">Login</h1>
+        <hr>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" type="text" formControlName="email" name="email" id="email">
+                <small class="text-danger">{{ getEmailErrors() }}</small>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-control" type="password" formControlName="password" name="password" id="password">
+                <div *ngIf="loginForm.get('password')?.touched && !loginForm.get('password')?.valid">
+                    <small class="text-danger" *ngIf="loginForm.get('password')?.errors?.required">
+                        Password is required
+                    </small>
+                </div>
+            </div>
+            <button class="btn btn-primary my-4">Login</button>
+            <hr>
+            <div>
+                <small>Did not sign up? <a [routerLink]="['/auth/register']">Sign Up</a></small>
+            </div>
+        </form>
+        <div *ngIf="error" class="alert alert-warning d-flex align-items-center" role="alert">
+            <div>{{ error }}</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+</div>

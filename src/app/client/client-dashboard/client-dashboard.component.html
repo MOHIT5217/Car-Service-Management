@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="client">
+                            <span data-feather="home"></span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/client/apply-service">
+                            <span data-feather="file"></span>
+                            Apply for Service
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/client/manage-cars">
+                            <span data-feather="car"></span>
+                            Manage Cars
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/client/view-status">
+                            <span data-feather="bar-chart-2"></span>
+                            View Service Status
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div
+                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Client Dashboard</h1>
+            </div>
+
+            <div class="row">
+                <!-- Example Card for Service Application -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Apply for Car Service</h5>
+                            <p class="card-text">Submit your car details to apply for a service.</p>
+                            <a href="/client/apply-service" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Card for Managing Cars -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Manage Cars</h5>
+                            <p class="card-text">Add, update, or remove cars from your list.</p>
+                            <a href="/client/manage-cars" class="btn btn-primary">Manage</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Card for Viewing Service Status -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">View Service Status</h5>
+                            <p class="card-text">Check the current status of your car services.</p>
+                            <a href="/client/view-status" class="btn btn-primary">View Status</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

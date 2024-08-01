@@ -1,0 +1,13 @@
+/* Ensure the sidebar is full height */
+#sidebar {
+    height: 100vh;
+}
+
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
